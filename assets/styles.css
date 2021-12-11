@@ -1,7 +1,7 @@
 :root {
   --background: #fff;
   --text: rgba(0, 0, 0, 0.6);
-  --text-highlight: #1d1dc2;
+  --text-highlight: #0055B8;
 
 }
 
@@ -16,6 +16,27 @@
   html {
     font-size: 93.75%;
   }
+
+  .banner {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .banner .banner_text {
+    font-size: 3em;
+    margin: 0;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .cards_container .card:nth-child(n) {
+    flex-direction: column !important;
+  }
+
+  .intro {
+    flex-direction: column;
+  }
+
 }
 
 @media (max-width: 720px) {
@@ -38,25 +59,13 @@ body, input, textarea, button {
   justify-content: space-around;
 }
 
-.banner > img {
+.banner>img {
   max-height: 400px;
   margin: auto;
 
 }
 
-.banner .banner_overlay {
-  position: absolute;
-  background: transparent;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  display: flex;
-  place-content: center;
-  place-items: center;
-}
-.banner .banner_text{
-
+.banner_text {
   margin: auto 1em auto auto;
   color: #fff;
   margin-right: 3em;
@@ -67,22 +76,23 @@ body, input, textarea, button {
   font-size: 4em;
 }
 
-.color-highlight{
+.color-highlight {
   color: var(--text-highlight);
 }
 
-.container{
+.container {
   margin: 50px auto;
   max-width: 1300px;
 }
 
-.intro{
+.intro {
   display: flex;
   place-content: center;
   place-items: center;
+  flex-direction: column;
 }
 
-.intro .intro_description{
+.intro .intro_description {
   text-align: center;
   font-size: 1.5em;
   flex: 1;
@@ -93,37 +103,46 @@ body, input, textarea, button {
 }
 
 
-.roundeds_grid{
+.statisc_grid {
   width: 100%;
   display: grid;
   grid-gap: 1rem;
-  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   margin-top: 4em;
   margin-bottom: 5rem;
-  flex:1;
-
+  flex: 1;
 }
 
-.roundeds_item{
-  height: 150px;
+.intro>h1 {
+  color: var(--text-highlight);
+  font-size: 2rem;
+}
+
+.statisc_item {
+  height: 250px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   place-content: center;
   place-items: center;
   background-color: #fff;
+  padding: 20px;
   gap: 20px;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06), 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
 }
-.roundeds_item .roundeds_icon{
-  background-color: #aababc;
-  border-radius: 100%;
+
+.statisc_item .statisc {
   display: flex;
   place-content: center;
   place-items: center;
-  width: 50px;
-  height: 50px;
+  color: var(--text-highlight);
+  font-weight: 500;
+  font-size: 3em;
+
 }
 
-.card,.intro{
+.card, .intro {
   width: 100%;
   min-height: 25rem;
   display: flex;
@@ -132,31 +151,39 @@ body, input, textarea, button {
   margin: 3em 0;
 
 }
-.card_img, .card_description{
+
+.card_img, .card_description {
   flex: 1;
   display: flex;
   flex-direction: column;
   place-items: center;
   place-content: center;
 }
-.card_description{
-  text-align: center;
+
+.card_description, .card_description>h1 {
+  text-align: left;
 }
 
-.card_img{
-  
-}
+.card_img {}
 
-.card_description h1{
-  margin: 50px auto;
+.card_description h1 {
+  margin-bottom: 50px;
+  width: 100%;
   color: var(--text-highlight);
+  text-align: left;
 
 }
 
-.cards_container{
+.cards_container {
   display: flex;
   flex-direction: column;
 }
-.cards_container .card:nth-child(even){
+
+.cards_container .card:nth-child(even) {
   flex-direction: row-reverse;
+}
+
+.card-highlight{
+  background-color: #E9F4FB;
+
 }
